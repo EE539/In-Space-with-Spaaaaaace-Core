@@ -6,6 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] float mainThrust = 100f, rotationThrust = 1f;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,13 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); // Vector3.up = 0,1,0
+            if (!audioSource.isPlaying)
+                audioSource.Play();
         }
+        
+        else if(Input.GetKeyUp(KeyCode.Space))
+            audioSource.Stop();
+
     }
 
     void ProcessRotation()
