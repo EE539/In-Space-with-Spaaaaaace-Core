@@ -8,10 +8,13 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     [SerializeField] AudioSource audioSource;
     [SerializeField] float mainThrust = 100f, rotationThrust = 1f;
+    
+    public bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -24,12 +27,13 @@ public class Movement : MonoBehaviour
         {
             transform.position = new Vector3(GetComponent<MeshCollider>().transform.position.x, GetComponent<MeshCollider>().transform.position.y, 0);
         }
-        
+        if(!isAlive && audioSource.isPlaying)
+            audioSource.Stop();
             
     }
     void ProcessThrust()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && isAlive)
         {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); // Vector3.up = 0,1,0
             if (!audioSource.isPlaying)

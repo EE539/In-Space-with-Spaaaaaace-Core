@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] AudioSource playerVoice;
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -27,8 +28,16 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void StartCrashSequence(){
+        GetComponent<Movement>().isAlive = false;
         GetComponent<Movement>().enabled = false;
-        Invoke("ReloadScene", levelLoadDelay);
+        StartCoroutine(Example());
+        Debug.Log(levelLoadDelay);
+        Invoke("ReloadScene", GetComponent<AudioForPlayer>().clipLength);
+    }
+    IEnumerator Example()
+    {
+        levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
+        yield return new WaitUntil(() => levelLoadDelay > 0);
     }
     void ReloadScene()
     {
@@ -51,4 +60,5 @@ public class CollisionHandler : MonoBehaviour
             nextSceneIndex = 0;
         SceneManager.LoadScene(nextSceneIndex);       
     }
+
 }
