@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] float levelLoadDelay = 0f;
     [SerializeField] AudioSource playerVoice;
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,14 +32,22 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence(){
         GetComponent<Movement>().isAlive = false;
         GetComponent<Movement>().enabled = false;
-        StartCoroutine(Example());
-        Debug.Log(levelLoadDelay);
-        Invoke("ReloadScene", GetComponent<AudioForPlayer>().clipLength);
+        //StartCoroutine(Example());
+        levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
+        Debug.Log("Load delay = "+levelLoadDelay);
+        if(levelLoadDelay <= 0)
+        {
+            Invoke("StartCrashSequence", 0f);
+            levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
+        }
+        else
+            Invoke("ReloadScene", levelLoadDelay);
     }
     IEnumerator Example()
     {
         levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
         yield return new WaitUntil(() => levelLoadDelay > 0);
+        
     }
     void ReloadScene()
     {
@@ -48,16 +58,27 @@ public class CollisionHandler : MonoBehaviour
 
     }
     void StartSuccessSequence(){
+        GetComponent<Movement>().success = true;
         GetComponent<Movement>().enabled = false;
-        Invoke("LoadNextLevel", levelLoadDelay);
+        levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
+        Debug.Log("Load delay = " + levelLoadDelay);
+        if (levelLoadDelay <= 0)
+        {
+            Invoke("StartSuccessSequence", 0f);
+            levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
+        }
+        else
+            Invoke("LoadNextLevel", levelLoadDelay);
 
     }
     void LoadNextLevel()
     {
+        GetComponent<Movement>().success = false;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)//SceneManager.sceneCountInBuildSettings -> Total number of scene
             nextSceneIndex = 0;
+        GetComponent<AudioForPlayer>().count = 0;
         SceneManager.LoadScene(nextSceneIndex);       
     }
 

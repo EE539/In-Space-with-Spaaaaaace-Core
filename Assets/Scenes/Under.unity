@@ -405,6 +405,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1354403237}
+    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: audioClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b3a86f52d3b364a49af4fc2cdb432790, type: 3}
+    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: audioClip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd2f785b3b527fc4fbc9d7b7ebc9dbad, type: 3}
+    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: audioClip.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: dd8e22d480de0bc489ffe94951215810, type: 3}
     - target: {fileID: 1197244717372544392, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_Name
       value: Rocket :)
@@ -455,6 +471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+--- !u!82 &1354403237 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 965375459, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 1354403236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771653792
 GameObject:
   m_ObjectHideFlags: 0

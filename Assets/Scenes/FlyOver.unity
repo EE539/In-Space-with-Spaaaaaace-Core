@@ -1578,6 +1578,10 @@ PrefabInstance:
       propertyPath: playerVoice
       value: 
       objectReference: {fileID: 2043193152}
+    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: levelLoadDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1197244717372544392, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_Name
       value: Rocket :)

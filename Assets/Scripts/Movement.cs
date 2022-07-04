@@ -10,11 +10,14 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 100f, rotationThrust = 1f;
     
     public bool isAlive;
+    [HideInInspector] public bool success;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         isAlive = true;
+        success = false;
     }
 
     // Update is called once per frame
