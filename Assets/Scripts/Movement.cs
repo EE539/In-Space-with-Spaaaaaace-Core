@@ -12,6 +12,9 @@ public class Movement : MonoBehaviour
     public bool isAlive;
     [HideInInspector] public bool success;
 
+    [SerializeField] ParticleSystem mainParticles;
+    [SerializeField] ParticleSystem sideLParticels, sideRParticels;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,12 +42,17 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isAlive)
         {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); // Vector3.up = 0,1,0
+            if(!mainParticles.isPlaying)
+                mainParticles.Play();
             if (!audioSource.isPlaying)
                 audioSource.Play();
         }
         
-        else if(Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
             audioSource.Stop();
+            mainParticles.Stop();
+        }
 
     }
 
@@ -53,11 +61,24 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-rotationThrust);
+            if(!sideLParticels.isPlaying)
+                sideLParticels.Play();
         }
         else if (Input.GetKey(KeyCode.A))
         {
             ApplyRotation(rotationThrust);
+            if(!sideRParticels.isPlaying)
+                sideRParticels.Play();
         }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            sideLParticels.Stop();
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            sideRParticels.Stop();
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.forward*rotationThrust*Time.deltaTime);

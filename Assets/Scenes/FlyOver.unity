@@ -1166,11 +1166,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2043193152 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 965375459, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-  m_PrefabInstance: {fileID: 7048649687455980312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2083840732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,38 +1557,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: audioClip.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: b3a86f52d3b364a49af4fc2cdb432790, type: 3}
-    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: audioClip.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: cd2f785b3b527fc4fbc9d7b7ebc9dbad, type: 3}
-    - target: {fileID: 965375458, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: audioClip.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: dd8e22d480de0bc489ffe94951215810, type: 3}
-    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: playerVoice
-      value: 
-      objectReference: {fileID: 2043193152}
-    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: crashParticels
-      value: 
-      objectReference: {fileID: 7048649687455980313}
-    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: levelLoadDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-      propertyPath: successParticles
-      value: 
-      objectReference: {fileID: 7048649687455980314}
     - target: {fileID: 1197244717372544392, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_Name
       value: Rocket :)
       objectReference: {fileID: 0}
+    - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: mainParticles
+      value: 
+      objectReference: {fileID: 7048649687455980315}
+    - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: sideLParticels
+      value: 
+      objectReference: {fileID: 7048649687455980314}
+    - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: sideRParticels
+      value: 
+      objectReference: {fileID: 7048649687455980313}
     - target: {fileID: 7938536368314648243, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1642,12 +1621,17 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
 --- !u!198 &7048649687455980313 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6120879763048695176, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2531776203721155309, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
   m_PrefabInstance: {fileID: 7048649687455980312}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &7048649687455980314 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6578015762827625338, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2079369977573664873, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7048649687455980315 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3170707902949439968, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
   m_PrefabInstance: {fileID: 7048649687455980312}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9176188066595280966
