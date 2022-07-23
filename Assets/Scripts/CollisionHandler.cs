@@ -6,6 +6,9 @@ public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 0f;
     [SerializeField] AudioSource playerVoice;
+
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticels;
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -32,6 +35,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence(){
         GetComponent<Movement>().isAlive = false;
         GetComponent<Movement>().enabled = false;
+        crashParticels.Play();
         //StartCoroutine(Example());
         levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
         Debug.Log("Load delay = "+levelLoadDelay);
@@ -60,6 +64,7 @@ public class CollisionHandler : MonoBehaviour
     void StartSuccessSequence(){
         GetComponent<Movement>().success = true;
         GetComponent<Movement>().enabled = false;
+        successParticles.Play();
         levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
         Debug.Log("Load delay = " + levelLoadDelay);
         if (levelLoadDelay <= 0)

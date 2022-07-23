@@ -1579,9 +1579,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2043193152}
     - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: crashParticels
+      value: 
+      objectReference: {fileID: 7048649687455980313}
+    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: levelLoadDelay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 965375467, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: successParticles
+      value: 
+      objectReference: {fileID: 7048649687455980314}
     - target: {fileID: 1197244717372544392, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_Name
       value: Rocket :)
@@ -1632,6 +1640,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+--- !u!198 &7048649687455980313 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6120879763048695176, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7048649687455980314 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6578015762827625338, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9176188066595280966
 PrefabInstance:
   m_ObjectHideFlags: 0
