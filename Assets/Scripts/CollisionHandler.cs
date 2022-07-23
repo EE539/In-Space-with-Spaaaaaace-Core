@@ -9,6 +9,23 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem crashParticels;
+
+    bool collisionStatues = true;
+
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
+
+    void RespondToDebugKeys()
+    {
+        if (Input.GetKey(KeyCode.L))
+            LoadNextLevel();
+        if (Input.GetKey(KeyCode.C))
+        {
+            collisionStatues = !collisionStatues;
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -26,7 +43,8 @@ public class CollisionHandler : MonoBehaviour
                 break;
             default:
                 Debug.Log("Oopsy Daisy :P");
-                StartCrashSequence();
+                if(collisionStatues)
+                    StartCrashSequence();
                 break;
         }
         
@@ -36,9 +54,7 @@ public class CollisionHandler : MonoBehaviour
         GetComponent<Movement>().isAlive = false;
         GetComponent<Movement>().enabled = false;
         crashParticels.Play();
-        //StartCoroutine(Example());
         levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
-        Debug.Log("Load delay = "+levelLoadDelay);
         if(levelLoadDelay <= 0)
         {
             Invoke("StartCrashSequence", 0f);
@@ -47,12 +63,7 @@ public class CollisionHandler : MonoBehaviour
         else
             Invoke("ReloadScene", levelLoadDelay);
     }
-    IEnumerator Example()
-    {
-        levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
-        yield return new WaitUntil(() => levelLoadDelay > 0);
-        
-    }
+    
     void ReloadScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -66,7 +77,6 @@ public class CollisionHandler : MonoBehaviour
         GetComponent<Movement>().enabled = false;
         successParticles.Play();
         levelLoadDelay = GetComponent<AudioForPlayer>().clipLength;
-        Debug.Log("Load delay = " + levelLoadDelay);
         if (levelLoadDelay <= 0)
         {
             Invoke("StartSuccessSequence", 0f);

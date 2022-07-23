@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &71972734 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3170707902949439968, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &161534188
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +685,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1009448118 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2531776203721155309, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1158024426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1012,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442243996}
   m_CullTransparentMesh: 1
+--- !u!198 &1596572114 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2079369977573664873, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+  m_PrefabInstance: {fileID: 7048649687455980312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771653792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,18 +1576,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket :)
       objectReference: {fileID: 0}
+    - target: {fileID: 1197244717372544394, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: mainParticles
       value: 
-      objectReference: {fileID: 7048649687455980315}
+      objectReference: {fileID: 71972734}
     - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: sideLParticels
       value: 
-      objectReference: {fileID: 7048649687455980314}
+      objectReference: {fileID: 1596572114}
     - target: {fileID: 7048649687841109753, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: sideRParticels
       value: 
-      objectReference: {fileID: 7048649687455980313}
+      objectReference: {fileID: 1009448118}
     - target: {fileID: 7938536368314648243, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1619,21 +1638,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
---- !u!198 &7048649687455980313 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2531776203721155309, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-  m_PrefabInstance: {fileID: 7048649687455980312}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7048649687455980314 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2079369977573664873, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-  m_PrefabInstance: {fileID: 7048649687455980312}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7048649687455980315 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3170707902949439968, guid: 8ec71159a1109b3409fe03c81ffb8fae, type: 3}
-  m_PrefabInstance: {fileID: 7048649687455980312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9176188066595280966
 PrefabInstance:
   m_ObjectHideFlags: 0
