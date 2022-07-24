@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Under.unity
     guid: 4cc84ac9e9c063a4cb25990e116e2dae
+  - enabled: 1
+    path: Assets/Scenes/DontFall.unity
+    guid: ba41c6f93b7cf7141b3736fc20d25891
   m_configObjects: {}
